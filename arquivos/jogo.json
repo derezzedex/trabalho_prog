@@ -1,0 +1,70 @@
+{
+  "mapa": [
+    {
+      "id": 1,
+      "nome": "Ionia",
+      "desc": "Rodeada por águas traiçoeiras, Ionia é composta por várias províncias aliadas dispersas ao longo do arquipélago gigantesco conhecido como as Primeiras Terras."
+    },
+    {
+      "id": 2,
+      "nome": "Freljord",
+      "desc": "É uma terra severa e implacável. Orgulhoso e ferozmente independente, seu povo é composto de guerreiros natos, com uma forte cultura de saqueamento."
+    },
+    {
+      "id": 3,
+      "nome": "Ixtal",
+      "desc": "Reconhecida por seu domínio da magia elemental, Ixtal foi uma das primeiras nações independentes que se uniram ao império shurimane."
+    }
+  ],
+  "personagens": [
+    {
+      "id": 1,
+      "nome": "Jhin",
+      "nome_jogador": "Richard",
+      "entidade": {
+        "id": 1,
+        "tipo": {
+          "id": 1,
+          "raca": "Humano",
+          "classe": "Atirador"
+        },
+        "nivel": 9,
+        "experiencia": 220.5,
+        "vida": 1211.4,
+        "ataque": 205,
+        "defesa": 101.2,
+        "origem": {
+          "id": 1,
+          "nome": "Ionia",
+          "desc": "Rodeada por águas traiçoeiras, Ionia é composta por várias províncias aliadas dispersas ao longo do arquipélago gigantesco conhecido como as Primeiras Terras."
+        }
+      }
+    }
+  ],
+  "npcs": [
+    {
+      "id": 1,
+      "nome": "Gnar",
+      "entidade": {
+        "id": 3,
+        "tipo": {
+          "id": 3,
+          "raca": "Yordle",
+          "classe": "Lutador"
+        },
+        "nivel": 11,
+        "experiencia": 240.5,
+        "vida": 1527.7,
+        "ataque": 291.8,
+        "defesa": 210.2,
+        "origem": {
+          "id": 2,
+          "nome": "Freljord",
+          "desc": "É uma terra severa e implacável. Orgulhoso e ferozmente independente, seu povo é composto de guerreiros natos, com uma forte cultura de saqueamento."
+        }
+      }
+    }
+  ],
+  "id": 1,
+  "nome_aventura": "Lendas de Runeterra"
+}

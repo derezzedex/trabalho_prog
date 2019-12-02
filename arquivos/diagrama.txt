@@ -1,0 +1,82 @@
+//// Criado no site
+//// https://dbdiagram.io
+//// Link do meu diagrama: https://dbdiagram.io/d/5de51eeeedf08a25543e9ac0
+
+// Creating tables
+Table TipoItem{
+  id int [pk] // auto-increment
+  nome CharField
+  subtipo CharField
+}
+
+Table Item {
+  id int [pk]
+  nome CharField
+  desc CharField
+  tipo ForeignKeyField(TipoItem) [ref: - TipoItem.id]
+  durabilidade IntegerField
+  durabilidade_max IntegerField
+  ataque FloatField
+  defesa FloatfField
+}
+
+Table Local {
+  id int [pk]
+  nome CharField
+  desc CharField
+}
+
+Table TipoEntidade {
+  id int [pk]
+  raca CharField
+  classe CharField
+}
+
+Table Entidade {
+  id int [pk]
+  nivel FloatField
+  experiencia FloatField
+  vida FloatField
+  defesa FloatField
+  origem CharField
+  tipo ForeignKeyField(TipoEntidade) [ref: - TipoEntidade.id]
+  inventario ManyToManyField(Item) [ref: - Item.id]
+}
+
+Table Inimigo {
+  id int [pk]
+  nome CharField
+  entidade ForeignKeyField(Entidade) [ref: - Entidade.id]
+}
+
+Table Personagem {
+  id int [pk]
+  nome CharField
+  nome_jogador CharField
+  entidade ForeignKeyField(Entidade) [ref: - Entidade.id]
+}
+
+Table Quest {
+  id int [pk]
+  nome CharField
+  desc CharField
+  destino ForeignKeyField(Local) [ref: - Local.id]
+  recompensa ManyToManyField(Item) [ref: - Item.id]
+}
+
+Table NPC {
+  id int [pk]
+  nome CharField
+  entidade ForeignKeyField(Entidade) [ref: - Entidade.id]
+  quests ManyToManyField(Quest) [ref: - Quest.id]
+}
+
+Table Jogo {
+  id int [pk]
+  nome_aventura CharField
+  mapa ManyToManyField(Local) [ref: - Local.id]
+  personagens ManyToManyField(Personagem) [ref: - Personagem.id]
+  npcs ManyToManyField(NPC) [ref: - NPC.id]
+}
+
+Ref: "Personagem"."id" < "Personagem"."entidade"
