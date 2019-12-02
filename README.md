@@ -7,6 +7,11 @@ Criado através do site [dbdiagram.io](https://dbdiagram.io)
 ![Imagem do Diagrama Entidade Relacionamento](arquivos/diagrama.png)
 
 ## JSON
+Criado através das seguintes linhas
+```python
+jogo_dict = model_to_dict(jogo, manytomany=True, recurse=True)
+print(json.dumps(jogo_dict))
+```
 
 ```json
 {
