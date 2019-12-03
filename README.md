@@ -2,11 +2,17 @@
 Trabalho para aula de Programação 2. \
 Abaixo uma imagem com o diagrama de Entidade e Relacionamento do Banco de Dados, e logo abaixo o `json` que contém o resultado do `model_to_dict` de uma instância de `Jogo` e ao final tabelas representando as classes e suas respectivas colunas.
 
-## Diagrama
+## :smiley: Bônus da alegria :smiley:
+Através do programa interativo `testador_backend.py` você pode testar o backend enviando as requisições para receber as linhas contidas no Banco de Dados, para isso é necessário:
+1. Executar o arquivo `backend\bd.py` para criar o arquivo do banco de dados.
+2. Iniciar o servidor Flask que responderá as resquisições, o arquivo encontra-se em `backend\servidor.py`
+3. Utilizar o programa interativo `testador_backend.py` para listar as tabelas.
+
+### Diagrama
 Criado através do site [dbdiagram.io](https://dbdiagram.io)
 ![Imagem do Diagrama Entidade Relacionamento](arquivos/diagrama.png)
 
-## JSON
+### JSON
 Criado através das seguintes linhas
 ```python
 jogo_dict = model_to_dict(jogo, manytomany=True, recurse=True)
@@ -86,14 +92,14 @@ print(json.dumps(jogo_dict))
 }
 ```
 
-## Classes
-### TipoItem
+### Classes
+#### TipoItem
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 nome           | CharField      |
 subtipo        | CharField      |
 
-### Item
+#### Item
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 nome | CharField
@@ -104,19 +110,19 @@ durabilidade_max | IntegerField(null=True)
 ataque | FloatField(null=True)
 defesa | FloatField(null=True)
 
-### Local
+#### Local
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 nome | CharField
 desc | CharField
 
-### TipoEntidade
+#### TipoEntidade
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 raca | CharField
 classe | CharField
 
-### Entidade
+#### Entidade
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 tipo | ForeignKeyField(TipoEntidade)
@@ -128,20 +134,20 @@ defesa | FloatField
 origem | ForeignKeyField(Local)
 inventario | ManyToManyField(Item)
 
-### Inimigo
+#### Inimigo
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 nome | CharField
 entidade | ForeignKeyField(Entidade)
 
-### Personagem
+#### Personagem
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 nome | CharField
 nome_jogador | CharField
 entidade | ForeignKeyField(Entidade)
 
-### Quest
+#### Quest
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 nome | CharField
@@ -149,14 +155,14 @@ desc | CharField
 destino | ForeignKeyField(Local)
 recompensa | ManyToManyField(Item)
 
-### NPC
+#### NPC
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 nome | CharField
 entidade | ForeignKeyField(Entidade)
 quests | ManyToManyField(Quest)
 
-### Jogo
+#### Jogo
 Nome da coluna | Tipo da coluna |
 ---------------|----------------|
 nome_aventura | CharField

@@ -174,5 +174,7 @@ jogo.mapa.add([freljord, ixtal, ionia])
 jogo.personagens.add([personagem_jhin])
 jogo.npcs.add([npc_gnar])
 
-jogo_dict = model_to_dict(jogo, manytomany=True, recurse=True)
-print(json.dumps(jogo_dict))
+if __name__ == "__main__":
+    jogo_dict = model_to_dict(jogo, manytomany=True, recurse=True)
+    print("Json do Jogo:\n")
+    print(json.dumps(jogo_dict))
