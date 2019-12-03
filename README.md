@@ -5,7 +5,7 @@ Abaixo uma imagem com o diagrama de Entidade e Relacionamento do Banco de Dados,
 ## :smiley: Bônus da alegria :smiley:
 Através do programa interativo `testador_backend.py` você pode testar o backend enviando as requisições para receber as linhas contidas no Banco de Dados, para isso é necessário:
 1. Executar o arquivo `backend\bd.py` para criar o arquivo do banco de dados.
-2. Iniciar o servidor Flask que responderá as resquisições, o arquivo encontra-se em `backend\servidor.py`
+2. Iniciar o servidor Flask que responderá as requisições, o arquivo encontra-se em `backend\servidor.py`.
 3. Utilizar o programa interativo `testador_backend.py` para listar as tabelas.
 
 ### Diagrama
